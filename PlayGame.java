@@ -32,6 +32,7 @@ public class PlayGame {
 		while(i < 2){
 			int id = -1;
 			Player player = new Player();
+			//获得玩家的id，若有重复或不为整型则一直循环
 			while(true) {
 				System.out.println("请输入第" + (i + 1) + "位玩家的ID:");
 				try {
@@ -70,11 +71,14 @@ public class PlayGame {
 		}
 		System.out.println("-------------发牌结束-------------");
 		System.out.println("-------------开始游戏-------------");
+		//分别取到两玩家最大的牌
 		Card maxCard1 = game.players.get(0).cards.get(0).compareTo(game.players.get(0).cards.get(1));
 		Card maxCard2 = game.players.get(1).cards.get(0).compareTo(game.players.get(1).cards.get(1));
 		System.out.println("玩家" + game.players.get(0).getName() + "最大的手牌为：" + maxCard1.getColor() + maxCard1.getCount());
 		System.out.println("玩家" + game.players.get(1).getName() + "最大的手牌为：" + maxCard2.getColor() + maxCard2.getCount());
+		//比较两玩家最大的手牌
 		Card maxCard = maxCard1.compareTo(maxCard2);
+		//判断最大的手牌属于哪个玩家
 		if(maxCard.equals(maxCard1)) {
 			System.out.println("★玩家：" + game.players.get(0).getName() + "获胜！");
 		}else {
