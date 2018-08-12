@@ -24,8 +24,6 @@ public class PlayGame {
 		System.out.println("-------------创建成功-------------");
 		game.cards.printCards();
 		System.out.println("-------------开始洗牌-------------");
-		game.newCards = game.cards.newCards();
-		game.cards.printCards(game.newCards);
 		System.out.println("-------------洗牌结束-------------");
 		System.out.println("-------------创建玩家-------------");
 		int i = 0;
